@@ -38,6 +38,18 @@ a {
     color: var(--primary-color);
 }
 
+/* Scroll animation styles */
+.pre-animate {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animated {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -116,7 +128,9 @@ nav {
 }
 
 .nav-links {
-    display: flex;
+    display:flex;
+    justify-content: center;
+    align-items: center;
     list-style: none;
 }
 
@@ -213,8 +227,8 @@ nav {
 }
 
 .feature-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
 .feature-card .icon {
@@ -282,6 +296,15 @@ nav {
 
 .step-content p {
     color: var(--gray-color);
+}
+
+.step {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 /* Community Section */
