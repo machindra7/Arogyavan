@@ -123,28 +123,23 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Animation on scroll
     function animateOnScroll() {
-        const elements = document.querySelectorAll('.feature-card, .step, .testimonial-card');
-        
-        elements.forEach(element => {
+        document.querySelectorAll('.animate-on-scroll').forEach(element => {
             const elementPosition = element.getBoundingClientRect().top;
             const screenPosition = window.innerHeight / 1.2;
             
             if (elementPosition < screenPosition) {
-                element.style.opacity = '1';
-                element.style.transform = 'translateY(0)';
+                element.classList.add('animated');
             }
         });
     }
-    
-    // Set initial styles for animation
-    document.querySelectorAll('.feature-card, .step, .testimonial-card').forEach(element => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(20px)';
-        element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        
+    // Initial state setup
+    document.querySelectorAll('.animate-on-scroll').forEach(element => {
+        element.classList.add('pre-animate');
     });
     
     window.addEventListener('scroll', animateOnScroll);
-    animateOnScroll(); // Run once on page load
+    animateOnScroll(); // initial run
 });
 
 const signupForm = document.getElementById('signup-form');
